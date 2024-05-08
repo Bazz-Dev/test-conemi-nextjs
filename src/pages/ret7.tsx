@@ -128,8 +128,8 @@ function RequestForm() {
             <Form {...ret7Form}>
               <form onSubmit={handleSubmit(onSubmit)} className="w-full">
 
-                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Datos Empresa</h2>
-                <div className="grid grid-cols-3 gap-2 items-center justify-center">  
+                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 pt-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Datos Empresa</h2>
+                <div className="grid grid-cols-3 gap-2 items-center justify-center">
                   <FormField
                     name="empresa"
                     render={({ field }) => (
@@ -190,234 +190,236 @@ function RequestForm() {
                     )}
                   />
                   <FormField
-                  name="fuenteEmisora"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Fuente Emisora:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="fuenteEmisora" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.fuenteEmisora?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
-                
-
-                <FormField
-                  name="comuna"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Comuna:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Comuna" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.comuna?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                    name="fuenteEmisora"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Fuente Emisora:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="fuenteEmisora" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.fuenteEmisora?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
 
+                  <FormField
+                    name="comuna"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Comuna:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Comuna" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.comuna?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="puntoMuestreo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Punto de Muestreo:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Punto de muestreo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.puntoMuestreo?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
 
-                <FormField
-                  name="planilla"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>N° de Planilla:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Número de planilla" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.planilla?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+
+                  <FormField
+                    name="puntoMuestreo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Punto de Muestreo:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Punto de muestreo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.puntoMuestreo?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    name="planilla"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>N° de Planilla:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Número de planilla" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.planilla?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
                 </div>
 
-                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Antecedentes de Monitoreo</h2>
+                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 pt-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Antecedentes de Monitoreo</h2>
+                <div className="grid grid-cols-3 gap-2 items-center justify-center">
 
-                <FormField
-                  name="tipoDescarga"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Tipo de Descarga:</FormLabel>
-                      <FormControl>
-                        <Select {...field}>  {/* Spread field props for validation etc. */}
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="Continua">Continua</SelectItem>
-                            <SelectItem value="Discontinua">Discontinua</SelectItem>
-                            <SelectItem value="Esporádica">Esporádica</SelectItem>
-                            <SelectItem value="Batch">Batch</SelectItem>
-                            {/* Add more options here if needed */}
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.tipoDescarga?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="tipoDescarga"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tipo de Descarga:</FormLabel>
+                        <FormControl>
+                          <Select {...field}>  {/* Spread field props for validation etc. */}
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Continua">Continua</SelectItem>
+                              <SelectItem value="Discontinua">Discontinua</SelectItem>
+                              <SelectItem value="Esporádica">Esporádica</SelectItem>
+                              <SelectItem value="Batch">Batch</SelectItem>
+                              {/* Add more options here if needed */}
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.tipoDescarga?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="tipoMuestreo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Tipo de Muestreo:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="Automatico">Automatico</SelectItem>
-                            <SelectItem value="Manual">Manual</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.tipoMuestreo?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="tipoMuestreo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tipo de Muestreo:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Automatico">Automatico</SelectItem>
+                              <SelectItem value="Manual">Manual</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.tipoMuestreo?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="tipoMuestreoCompuesto"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Tipo de Muestreo 2:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="Funcion del Caudal">Funcion del Caudal</SelectItem>
-                            <SelectItem value="Funcion del Tiempo">Funcion del Tiempo</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.tipoMuestreoCompuesto?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="tipoMuestreoCompuesto"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Tipo de Muestreo 2:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Funcion del Caudal">Funcion del Caudal</SelectItem>
+                              <SelectItem value="Funcion del Tiempo">Funcion del Tiempo</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.tipoMuestreoCompuesto?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="ElaboracionMuestra"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Elaboración Muestra:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="opción1">Opción 1</SelectItem>
-                            <SelectItem value="opción2">Opción 2</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.ElaboracionMuestra?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="ElaboracionMuestra"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Elaboración Muestra:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Terreno">Terreno</SelectItem>
+                              <SelectItem value="Laboratorio">Laboratorio</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.ElaboracionMuestra?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="horaTomaMuestra"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Hora Toma Muestra:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Hora toma muestra" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.horaTomaMuestra?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="horaTomaMuestra"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Hora Toma Muestra:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Hora toma muestra" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.horaTomaMuestra?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
+                </div>
+                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 pt-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg"> Medición Parámetros de Terreno</h2>
+                <div className="grid grid-cols-4 gap-1 items-center justify-center">
 
-                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg"> Medición Parámetros de Terreno</h2>
+                  <FormField
+                    name="temp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container flex justify-center"> {/* Wrap Checkbox and Label */}
+                          <Checkbox {...ret7Form.register("temp")} />
+                          <FormLabel>Temperatura (°C)</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="temp"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container flex justify-center"> {/* Wrap Checkbox and Label */}
-                        <Checkbox {...ret7Form.register("temp")} />
-                        <FormLabel>Temperatura (°C)</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="pH"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container flex justify-center">
+                          <Checkbox {...ret7Form.register("pH")} />
+                          <FormLabel>pH</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="pH"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container flex justify-center">
-                        <Checkbox {...ret7Form.register("pH")} />
-                        <FormLabel>pH</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="caudal"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container flex justify-center">
+                          <Checkbox {...ret7Form.register("caudal")} />
+                          <FormLabel>Caudal</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="caudal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container flex justify-center">
-                        <Checkbox {...ret7Form.register("caudal")} />
-                        <FormLabel>Caudal</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="cloroResidual"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container flex justify-center">
+                          <Checkbox {...ret7Form.register("cloroResidual")} />
+                          <FormLabel>Cloro Residual</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
 
-                <FormField
-                  name="cloroResidual"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container flex justify-center">
-                        <Checkbox {...ret7Form.register("cloroResidual")} />
-                        <FormLabel>Cloro Residual</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-
-                />
-
+                  />
+                </div>
                 {/* {ret7Form.watch("cloroResidual") && (
                 <>
                   <FormField
@@ -481,359 +483,362 @@ function RequestForm() {
 
                 {/* Equipos Utilizados */}
 
-                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Equipos Utilizados</h2>
-                <FormField
-                  name="equipoPhTemp"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Equipos de pH - Temperatura:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="opción1">Portátil N°</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.equipoPhTemp?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 pt-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Equipos Utilizados</h2>
+                <div className="grid grid-cols-4 gap-3 items-center justify-center">
 
-                <FormField
-                  name="equipoPhTemp2"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Equipos de pH - Temperatura:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="opción1">Portátil</SelectItem>
-                            <SelectItem value="opción1"> Línea</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.equipoPhTemp2?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
 
-                <FormField
-                  name="equipoMuestreo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Equipo de muestreo:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="opción1">Automatico</SelectItem>
-                            <SelectItem value="opción1">Manual</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.equipoMuestreo?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  name="equipoCaudal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Equipo medición de caudal:</FormLabel>
-                      <FormControl>
-                        <Select>
-                          <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="Seleccionar..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="opción1">Automatico</SelectItem>
-                            <SelectItem value="opción1">Manual</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.equipoCaudal?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="equipoPhTemp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Equipos de pH - Temperatura:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Portatil">Portátil N°</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.equipoPhTemp?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                {/* Campos de Código de Equipo */}
-                <FormField
-                  name="codigoEquipoPhTemp"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Código de Equipo pH-Temperatura:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Código de equipo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.codigoEquipoPhTemp?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="equipoPhTemp2"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Equipos de pH - Temperatura:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Portatil">Portátil</SelectItem>
+                              <SelectItem value="Linea"> Línea</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.equipoPhTemp2?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="codigoEquipoPhTemp2"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Código de Equipo pH-Temperatura 2:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Código de equipo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.codigoEquipoPhTemp2?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="equipoMuestreo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Equipo de muestreo:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Automatico">Automatico</SelectItem>
+                              <SelectItem value="Manual">Manual</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.equipoMuestreo?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="equipoCaudal"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Equipo medición de caudal:</FormLabel>
+                        <FormControl>
+                          <Select>
+                            <SelectTrigger className="w-[180px]">
+                              <SelectValue placeholder="Seleccionar..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Automatico">Automatico</SelectItem>
+                              <SelectItem value="Manual">Manual</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.equipoCaudal?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="codigoEquipoMuestreo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Código de Equipo de Muestreo:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Código de equipo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.codigoEquipoMuestreo?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  {/* Campos de Código de Equipo */}
+                  <FormField
+                    name="codigoEquipoPhTemp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Código de Equipo pH-Temperatura:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Código de equipo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.codigoEquipoPhTemp?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="codigoEquipoCaudal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Código de Equipo de Medición de Caudal:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Código de equipo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.codigoEquipoCaudal?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="codigoEquipoPhTemp2"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Código de Equipo pH-Temperatura 2:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Código de equipo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.codigoEquipoPhTemp2?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                {/* Otros Campos */}
-                <FormField
-                  name="dimensionesCaracteristicasCanal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Dimensiones y Características del Canal:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Dimensiones y características del canal" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.dimensionesCaracteristicasCanal?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="codigoEquipoMuestreo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Código de Equipo de Muestreo:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Código de equipo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.codigoEquipoMuestreo?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="metodosMedicionCaudal"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Métodos de Medición de Caudal:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Métodos de medición de caudal" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.metodosMedicionCaudal?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="codigoEquipoCaudal"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Código de Equipo de Medición de Caudal:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Código de equipo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.codigoEquipoCaudal?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="condicionPuntoMuestreo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Condición del Punto de Muestreo:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Condición del punto de muestreo" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.condicionPuntoMuestreo?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  {/* Otros Campos */}
+                  <FormField
+                    name="dimensionesCaracteristicasCanal"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Dimensiones y Características del Canal:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Dimensiones y características del canal" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.dimensionesCaracteristicasCanal?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="controlVerificacionSondaPh"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Control y Verificación Sonda pH:</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Control y verificación sonda pH" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.controlVerificacionSondaPh?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="metodosMedicionCaudal"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Métodos de Medición de Caudal:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Métodos de medición de caudal" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.metodosMedicionCaudal?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
 
+                  <FormField
+                    name="condicionPuntoMuestreo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Condición del Punto de Muestreo:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Condición del punto de muestreo" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.condicionPuntoMuestreo?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    name="controlVerificacionSondaPh"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Control y Verificación Sonda pH:</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Control y verificación sonda pH" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.controlVerificacionSondaPh?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
+                </div>
                 {/* Verificación Equipo Muestreador Automático */}
-                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Verificación Equipo Muestreador Automático</h2>
-                <div className="grid grid-cols-4 gap-3 items-center justify-center">  
+                <h2 className="text-center font-bold text-2xl text-gray-800 mb-6 pb-2 pt-2 border-b border-gray-300 shadow-md bg-gray-100 rounded-lg">Verificación Equipo Muestreador Automático</h2>
+                <div className="grid grid-cols-4 gap-3 items-center justify-center">
 
-                <FormField
-                  name="controlador"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("controlador")} />
-                        <FormLabel>controlador</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="controlador"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("controlador")} />
+                          <FormLabel>controlador</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="sistemaBombeo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("sistemaBombeo")} />
-                        <FormLabel>sistemaBombeo</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="sistemaBombeo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("sistemaBombeo")} />
+                          <FormLabel>sistemaBombeo</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="sistemaBombeo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("sistemaBombeo")} />
-                        <FormLabel>Sistema de Bombeo</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="sistemaBombeo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("sistemaBombeo")} />
+                          <FormLabel>Sistema de Bombeo</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="sistemaDistribuidor"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("sistemaDistribuidor")} />
-                        <FormLabel>Sistema Distribuidor</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="sistemaDistribuidor"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("sistemaDistribuidor")} />
+                          <FormLabel>Sistema Distribuidor</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="refrigeracionMuestras"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("refrigeracionMuestras")} />
-                        <FormLabel>Refrigeración de Muestras</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="refrigeracionMuestras"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("refrigeracionMuestras")} />
+                          <FormLabel>Refrigeración de Muestras</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="calibracionVolumen"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("calibracionVolumen")} />
-                        <FormLabel>Calibración Volumen</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="calibracionVolumen"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("calibracionVolumen")} />
+                          <FormLabel>Calibración Volumen</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="tomaMuestra"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("tomaMuestra")} />
-                        <FormLabel>Toma 1era Muestra</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="tomaMuestra"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("tomaMuestra")} />
+                          <FormLabel>Toma 1era Muestra</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="lineaSuccion"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("lineaSuccion")} />
-                        <FormLabel>Línea de Succión</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="lineaSuccion"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("lineaSuccion")} />
+                          <FormLabel>Línea de Succión</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="cierreEquipo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("cierreEquipo")} />
-                        <FormLabel>Cierre de Equipo</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="cierreEquipo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("cierreEquipo")} />
+                          <FormLabel>Cierre de Equipo</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  name="limpiezaEquipo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="checkbox-container">
-                        <Checkbox {...ret7Form.register("limpiezaEquipo")} />
-                        <FormLabel>Limpieza de Equipo</FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    name="limpiezaEquipo"
+                    render={({ field }) => (
+                      <FormItem>
+                        <div className="checkbox-container">
+                          <Checkbox {...ret7Form.register("limpiezaEquipo")} />
+                          <FormLabel>Limpieza de Equipo</FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
 
 
-                <FormField
-                  name="voltaje"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Voltaje</FormLabel>
-                      <FormControl>
-                        <Input type="text" placeholder="Voltaje (>=13V)" {...field} />
-                      </FormControl>
-                      <FormMessage className="text-xs text-red-500 mt-1">
-                        {errors.voltaje?.message}
-                      </FormMessage>
-                    </FormItem>
-                  )}
-                />
-                 </div>
+                  <FormField
+                    name="voltaje"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Voltaje</FormLabel>
+                        <FormControl>
+                          <Input type="text" placeholder="Voltaje (>=13V)" {...field} />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-500 mt-1">
+                          {errors.voltaje?.message}
+                        </FormMessage>
+                      </FormItem>
+                    )}
+                  />
+                </div>
                 <FormField
                   name="observaciones"
                   render={({ field }) => (

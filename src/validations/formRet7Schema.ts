@@ -38,7 +38,7 @@ export const formRet7Schema = z.object({
   horasDeclorado: z.string().min(2, "Código de equipo debe tener al menos 2 caracteres"),
 
   // Equipos Utilizados
-  equipoPhTemp: z.enum(["Portátil N°"]),
+  equipoPhTemp: z.enum(["Portátil"]),
   equipoPhTemp2: z.enum(["Portátil", "Línea"]),
   equipoMuestreo: z.enum(["Automático", "Manual"]),
   equipoCaudal: z.enum(["Automático", "Manual"]),
